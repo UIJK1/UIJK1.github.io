@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Java基础复习 - Faramita</title>
+
+  
+    <meta name="description" content="IDEA常用快捷1、自动导包、自动删包  1 2.if快速生成 1234567&#x2F;&#x2F;flag.ifif(flag)&amp;#123;    &amp;#125;&#x2F;&#x2F;flag.elseif(!flag)&amp;#123;&amp;#125; 3、循环 1234&#x2F;&#x2F;forifor(int i&#x3D;0;i&lt;10;i++)&amp;#123;&amp;#125;&#x2F;&#x2F;flag.while     4、变量 1new String().var 基础面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础复习">
+<meta property="og:url" content="http://example.com/2023/04/25/java/index.html">
+<meta property="og:site_name" content="Faramita">
+<meta property="og:description" content="IDEA常用快捷1、自动导包、自动删包  1 2.if快速生成 1234567&#x2F;&#x2F;flag.ifif(flag)&amp;#123;    &amp;#125;&#x2F;&#x2F;flag.elseif(!flag)&amp;#123;&amp;#125; 3、循环 1234&#x2F;&#x2F;forifor(int i&#x3D;0;i&lt;10;i++)&amp;#123;&amp;#125;&#x2F;&#x2F;flag.while     4、变量 1new String().var 基础面试">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230403094653183.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230419160613282.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230411111936404.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230411113102174.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230403194634891.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230403201649860.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230403195118755.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230403195137437.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230403201102384.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230403181100503.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/25a6a24d7cee4f02a139189c1b13c8f0.jpeg">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404105847181.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404110320407.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404110721793.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404111244552.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404142821835.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404144837442.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404150059342.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404163935459.png">
+<meta property="og:image" content="http://example.com/2023/04/25/java/image-20230404163958200.png">
+<meta property="article:published_time" content="2023-04-25T06:53:29.977Z">
+<meta property="article:modified_time" content="2023-04-25T07:41:41.673Z">
+<meta property="article:author" content="RuiHeng Lu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2023/04/25/java/image-20230403094653183.png">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Faramita</div><div class="sub cap">彼岸</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Java基础复习</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B2%E7%9C%8B"><span class="toc-text">已看</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E9%9D%A2%E8%AF%95"><span class="toc-text">java面试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-text">选择题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E4%B8%8B%E5%85%B3%E4%BA%8EHashMap%E7%9A%84%E8%AF%B4%E6%B3%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%98%AF"><span class="toc-text">以下关于HashMap的说法正确的是()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BD%BF%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E4%BF%9D%E5%AD%98%E5%88%B0%E7%A3%81%E7%9B%98%E4%B8%8A%E6%88%96%E5%9C%A8%E7%BD%91%E7%BB%9C%E4%B8%8A%E4%BC%A0%E8%BE%93%EF%BC%8C%E9%9C%80%E8%A6%81%E9%A6%96%E5%85%88%E7%BB%8F%E8%BF%87%E5%A6%82%E4%B8%8B%E4%BB%80%E4%B9%88%E6%93%8D%E4%BD%9C-%E5%B0%86%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E6%88%90%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="toc-text">为使对象可以保存到磁盘上或在网络上传输，需要首先经过如下什么操作( )将对象转换成字节数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#char%E7%B1%BB%E5%9E%8B%E5%8D%A0-%E4%B8%AA%E5%AD%97%E8%8A%82-2"><span class="toc-text">char类型占( )个字节  2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hashCode"><span class="toc-text">hashCode()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8Java%E4%B8%AD%EF%BC%8C%E6%88%91%E4%BB%AC%E6%89%80%E8%AE%B2%E7%9A%84%E6%9C%AC%E5%9C%B0%E6%8E%A5%E5%8F%A3%E4%B9%A6%E5%86%99%E7%A8%8B%E5%BA%8F%E6%88%96%E8%80%85%E6%9C%AC%E5%9C%B0%E6%96%B9%E6%B3%95%E6%8E%A5%E5%8F%A3%E6%8C%87%E7%9A%84%E6%98%AF"><span class="toc-text">在Java中，我们所讲的本地接口书写程序或者本地方法接口指的是</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java%E6%A0%87%E8%AF%86%E7%AC%A6%E9%9C%80%E8%A6%81%E9%81%B5%E5%BE%AA%E5%93%AA%E4%BA%9B%E8%A7%84%E5%88%99"><span class="toc-text">java标识符需要遵循哪些规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%90%86"><span class="toc-text">java跨平台原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E4%B8%8B%E5%93%AA%E4%BA%9B%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8EJava%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5%E7%9B%B8%E5%85%B3"><span class="toc-text">以下哪些关键字与Java面向对象的概念相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java-IO%E4%BD%93%E7%B3%BB%E4%B8%AD%EF%BC%8C%E9%80%9A%E5%B8%B8%E6%83%85%E5%86%B5%E4%B8%8B%E4%BB%A5%E4%B8%8B%E5%93%AA%E4%B8%AA%E7%B1%BB%E5%8F%AF%E7%94%A8%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E4%B8%94%E4%BA%A7%E7%94%9F%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%B0%91%E7%9A%84"><span class="toc-text">Java IO体系中，通常情况下以下哪个类可用来读取文件且产生的系统调用可能是最少的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8E%E6%96%B9%E6%B3%95sleep-%E5%92%8Cwait"><span class="toc-text">对于方法sleep()和wait()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Java中的基本数据类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#string%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">string字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F"><span class="toc-text">线程创建方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9C%89%E5%93%AA%E4%BA%9B%E7%8A%B6%E6%80%81"><span class="toc-text">线程池有哪些状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E6%A0%B8%E5%BF%83%E7%BA%BF%E7%A8%8B%E6%95%B0%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%EF%BC%9F"><span class="toc-text">线程池的核心线程数应该如何设置？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E7%BA%BF%E7%A8%8B%E6%95%B0"><span class="toc-text">最大线程数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%92%E7%BB%9D%E7%AD%96%E7%95%A5"><span class="toc-text">拒绝策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sychronized-%E5%92%8CReentrantLock%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="toc-text">Sychronized 和ReentrantLock有什么不同？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">java内存划分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">一维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BEint%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">放int数据类型的情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BE%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">放对象数组的情况</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">二维数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD"><span class="toc-text">方法的重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E5%BD%A2%E5%8F%82"><span class="toc-text">可变形参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-text">java 访问权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">单例设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A5%BF%E6%B1%89%E5%BC%8F%EF%BC%9A%E7%AB%8B%E5%8D%B3%E5%8A%A0%E8%BD%BD%EF%BC%9B"><span class="toc-text">饿汉式：立即加载；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%87%92%E6%B1%89%E5%BC%8F%EF%BC%9A%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD"><span class="toc-text">懒汉式：延迟加载</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-text">接口与抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">lambda表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">线程池</span></a></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-04-25T06:53:29.977Z">2023-04-25</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>Java基础复习</span></h1>
+<h1 id="IDEA常用快捷"><a href="#IDEA常用快捷" class="headerlink" title="IDEA常用快捷"></a>IDEA常用快捷</h1><p>1、自动导包、自动删包</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230403094653183.png" alt="image-20230403094653183"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>2.if快速生成</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//flag.if</span></span><br><span class="line"><span class="keyword">if</span>(flag)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//flag.else</span></span><br><span class="line"><span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3、循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//fori</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//flag.while    </span></span><br></pre></td></tr></table></figure>
+<p>4、变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">String</span>().<span class="keyword">var</span></span><br></pre></td></tr></table></figure>
+<h1 id="基础面试"><a href="#基础面试" class="headerlink" title="基础面试"></a>基础面试</h1><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230419160613282.png" alt="image-20230419160613282"></p>
+<h1 id="Java基础复习"><a href="#Java基础复习" class="headerlink" title="Java基础复习"></a>Java基础复习</h1><h2 id="已看"><a href="#已看" class="headerlink" title="已看"></a>已看</h2><p>尚硅谷Java零基础全套视频教程(宋红康2023版，java入门自学必备)</p>
+<p>P64</p>
+<p>P79 P80 P81</p>
+<p>P107 p108</p>
+<h2 id="java面试"><a href="#java面试" class="headerlink" title="java面试"></a>java面试</h2><h3 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h3><h4 id="以下关于HashMap的说法正确的是"><a href="#以下关于HashMap的说法正确的是" class="headerlink" title="以下关于HashMap的说法正确的是()"></a>以下关于HashMap的说法正确的是()</h4><p>A HashMap类的key可以重复</p>
+<p>B HashMap类的key可以为null</p>
+<p>C HashMap类的value不可以为null值</p>
+<p>D HashMap类的value可以包含null值，并且只能有1个</p>
+<p>key和value可以为null，但key只能存在一个null，位于组数的0位置：因为<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=hash&amp;spm=1001.2101.3001.7020">hash</a>(key)方法，当key=null ，返回0。存储对象时，存储为key的对象需要重写equals()方法。</p>
+<h4 id="为使对象可以保存到磁盘上或在网络上传输，需要首先经过如下什么操作-将对象转换成字节数组"><a href="#为使对象可以保存到磁盘上或在网络上传输，需要首先经过如下什么操作-将对象转换成字节数组" class="headerlink" title="为使对象可以保存到磁盘上或在网络上传输，需要首先经过如下什么操作( )将对象转换成字节数组"></a>为使对象可以保存到磁盘上或在网络上传输，需要首先经过如下什么操作( )将对象转换成字节数组</h4><p>序列化</p>
+<h4 id="char类型占-个字节-2"><a href="#char类型占-个字节-2" class="headerlink" title="char类型占( )个字节  2"></a>char类型占( )个字节  2</h4><p>在java中，char占用2个字节。Java中，只要是字符，不管是数字还是英文还是汉字，都占两个字节。原因：Java编译器默认使用Unicode编码，因此2字节可以表示所有字符。</p>
+<p><em>byte是 Java基本类型中的一个 是 1个字节</em></p>
+<h4 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode()"></a>hashCode()</h4><h4 id="在Java中，我们所讲的本地接口书写程序或者本地方法接口指的是"><a href="#在Java中，我们所讲的本地接口书写程序或者本地方法接口指的是" class="headerlink" title="在Java中，我们所讲的本地接口书写程序或者本地方法接口指的是"></a>在Java中，我们所讲的本地接口书写程序或者本地方法接口指的是</h4><p>JNI，JNI是Java Native Interface的缩写</p>
+<h4 id="java标识符需要遵循哪些规则"><a href="#java标识符需要遵循哪些规则" class="headerlink" title="java标识符需要遵循哪些规则"></a>java标识符需要遵循哪些规则</h4><p>标识符必须以字母(包括汉字)、下划线、美元符($)开头</p>
+<p>识符的其他部分可以是字母、下划线、数字、美元符的任意组合</p>
+<p>Java标识符大小写敏感，且无长度限制</p>
+<h4 id="java跨平台原理"><a href="#java跨平台原理" class="headerlink" title="java跨平台原理"></a>java跨平台原理</h4><p>Java 源代码经过编译，生成字节码文件，交由 Java 虚拟机来执行，不同得系统有不同得JVM,借助JVM 实现跨平台。</p>
+<h4 id="以下哪些关键字与Java面向对象的概念相关"><a href="#以下哪些关键字与Java面向对象的概念相关" class="headerlink" title="以下哪些关键字与Java面向对象的概念相关"></a>以下哪些关键字与Java面向对象的概念相关</h4><p>A override</p>
+<p>B throws</p>
+<p>C extends</p>
+<p>D implements</p>
+<p>ACD override是重写，也可以算吧，是实现接口</p>
+<h4 id="Java-IO体系中，通常情况下以下哪个类可用来读取文件且产生的系统调用可能是最少的"><a href="#Java-IO体系中，通常情况下以下哪个类可用来读取文件且产生的系统调用可能是最少的" class="headerlink" title="Java IO体系中，通常情况下以下哪个类可用来读取文件且产生的系统调用可能是最少的"></a>Java IO体系中，通常情况下以下哪个类可用来读取文件且产生的系统调用可能是最少的</h4><p>A、RandomAccessFile<br>B、FileInputStream<br>C、BufferedReader<br>D、InputStreamReader</p>
+<p>C</p>
+<h4 id="对于方法sleep-和wait"><a href="#对于方法sleep-和wait" class="headerlink" title="对于方法sleep()和wait()"></a>对于方法sleep()和wait()</h4><p>对于sleep()方法，我们首先要知道该方法是属于Thread类中的。而wait()方法，则是属于<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Object类&amp;spm=1001.2101.3001.7020">Object类</a>中的。</p>
+<p>这两个方法来自不同的类分别是Thread和Object，最主要是sleep方法没有释放锁，而wait方法释放了锁，使得其他线程可以使用同步控制块或者方法(锁代码块和方法锁)。wait，<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=notify&amp;spm=1001.2101.3001.7020">notify</a>和notifyAll只能在同步控制方法或者同步控制块里面使用，而sleep可以在任何地方,任何时候被任何线程使用(使用范围) sleep必须捕获异常，而wait notify和notifyAll不需要捕获异常。</p>
+<h4 id="Java中的基本数据类型"><a href="#Java中的基本数据类型" class="headerlink" title="Java中的基本数据类型"></a>Java中的基本数据类型</h4><p>官方解析：基本数据类型有：byte，short，int，long，char，boolean，float，double</p>
+<p>String不算基础数据类型</p>
+<h3 id="string字符串"><a href="#string字符串" class="headerlink" title="string字符串"></a>string字符串</h3><p>new string()、+和substring得到的字符串不会在字符串常量池中，而是存储在堆中。</p>
+<p>注意：使用加号时字面量+字面量的结果还是存在常量池。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&quot;ab&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">d</span> <span class="operator">=</span> <span class="string">&quot;a&quot;</span>+<span class="string">&quot;b&quot;</span>;</span><br><span class="line">System.out.println(c==d);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>但是一旦有变量，就会存在堆中，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">a</span> <span class="operator">=</span> <span class="string">&quot;a&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">b</span> <span class="operator">=</span> <span class="string">&quot;b&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">c</span> <span class="operator">=</span> <span class="string">&quot;ab&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">d</span> <span class="operator">=</span> a+b;</span><br><span class="line">System.out.println(c==d);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>“xxxxx”字符串字面量的东西才能放到字符串常量池里。</p>
+<p>但是我们可以new string().intern手动放到常量池里面。</p>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><h4 id="线程创建方式"><a href="#线程创建方式" class="headerlink" title="线程创建方式"></a>线程创建方式</h4><p>1、继承Thread类，java是单继承，这种实现方法不太好</p>
+<p>2、实现Runnable，无返回值</p>
+<p>3、实现Callable，可以拿到返回值</p>
+<p>4、线程池，节省线程创建和销毁的开销</p>
+<p>底层都是Runnable的实现方式。</p>
+<h4 id="线程池有哪些状态"><a href="#线程池有哪些状态" class="headerlink" title="线程池有哪些状态"></a>线程池有哪些状态</h4><p>1、running 表示线程池正常运行，既能接受新任务，也会正常处理队列中的任务</p>
+<p>2、shutdown 当调用线程池的shutdown方法时，线程池就进入shutdown状态，表示线程池处于正在关闭状态，此状态下线程池不会接受新任务，但是会继续把队列中的任务处理完</p>
+<p>3、stop 既不会接收新任务，也不会处理队列中的任务，并且正在运行的线程也会被中断。</p>
+<p>4、tidying 如果所有任务都终止了，有效线程数为0，线程池进入该状态后会调用terminated（）</p>
+<p>5、terminated 完全结束</p>
+<h4 id="线程池的核心线程数应该如何设置？"><a href="#线程池的核心线程数应该如何设置？" class="headerlink" title="线程池的核心线程数应该如何设置？"></a>线程池的核心线程数应该如何设置？</h4><p>CPU密集型的服务，线程数等于CPU核心数。</p>
+<p>IO密集型，（工作时间+休息时间）*CPU核心数/工作时间。目的是为了充分使用时间，比如一个人送快递，工作8小时，休息4小时，那么车就有4小时是空闲的，那么需要另外一个人（cpu）来利用。</p>
+<h4 id="最大线程数"><a href="#最大线程数" class="headerlink" title="最大线程数"></a>最大线程数</h4><p>（非核心线程数=最大线程数-核心线程数）</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230411111936404.png" alt="image-20230411111936404"></p>
+<h4 id="拒绝策略"><a href="#拒绝策略" class="headerlink" title="拒绝策略"></a>拒绝策略</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230411113102174.png" alt="image-20230411113102174"></p>
+<p><strong>当核心线程满了，阻塞队列也满了，非核心线程也满了，就需要执行拒绝策略。</strong></p>
+<p>根据业务来走</p>
+<p>1、直接抛异常</p>
+<p>2、让询问的线程自己去做这个任务（会对询问的线程有影响）</p>
+<p>3、将阻塞队列排最前的直接扔了</p>
+<p>4、不执行，不反馈，不抛异常，啥也不做{}</p>
+<h4 id="Sychronized-和ReentrantLock有什么不同？"><a href="#Sychronized-和ReentrantLock有什么不同？" class="headerlink" title="Sychronized 和ReentrantLock有什么不同？"></a>Sychronized 和ReentrantLock有什么不同？</h4><h2 id="java内存划分"><a href="#java内存划分" class="headerlink" title="java内存划分"></a>java内存划分</h2><p>将内存区域划分成5个部分：程序计数器、虚拟机栈、本地方法栈、堆、方法区。</p>
+<p>与目前数组相关的内存结构：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230403194634891.png" alt="image-20230403194634891"></p>
+<p>虚拟机栈：用于存放方法中声明的局部变量</p>
+<p>堆：用于存放数组的实体（即数组的所有元素）</p>
+<h3 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230403201649860.png" alt="image-20230403201649860"></p>
+<h4 id="放int数据类型的情况"><a href="#放int数据类型的情况" class="headerlink" title="放int数据类型的情况"></a>放int数据类型的情况</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230403195118755.png" alt="image-20230403195118755"></p>
+<h4 id="放对象数组的情况"><a href="#放对象数组的情况" class="headerlink" title="放对象数组的情况"></a>放对象数组的情况</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230403195137437.png" alt="image-20230403195137437"></p>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230403201102384.png" alt="image-20230403201102384"></p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>以父类声明的子类对象，只能使用父类中的方法。</p>
+<h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><p>参数列表不同：1、参数个数不同 2、参数类型不同 3、参数顺序不同</p>
+<p>与形参名、修饰符、返回值类型无关。</p>
+<h2 id="可变形参"><a href="#可变形参" class="headerlink" title="可变形参"></a>可变形参</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(参数类型 ... 参数名)</span><br></pre></td></tr></table></figure>
+<p>可变形参需要放最后。</p>
+<p>注意：这种是不能共存的</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230403181100503.png" alt="image-20230403181100503"></p>
+<h2 id="java-访问权限"><a href="#java-访问权限" class="headerlink" title="java 访问权限"></a>java 访问权限</h2><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="25a6a24d7cee4f02a139189c1b13c8f0.jpeg" alt="img"></p>
+<p>一个类必须有且仅有一个公共类</p>
+<p>（子包不能访问父包的default)</p>
+<h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404105847181.png" alt="image-20230404105847181"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404110320407.png" alt="image-20230404110320407"></p>
+<h4 id="饿汉式：立即加载；"><a href="#饿汉式：立即加载；" class="headerlink" title="饿汉式：立即加载；"></a>饿汉式：立即加载；</h4><p>优点：写法简单，使用更快，更方便，已在内存中加载</p>
+<p>缺点：内存占用时间较长</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404110721793.png" alt="image-20230404110721793"></p>
+<h4 id="懒汉式：延迟加载"><a href="#懒汉式：延迟加载" class="headerlink" title="懒汉式：延迟加载"></a>懒汉式：延迟加载</h4><p>优点：节省内存空间</p>
+<p>缺点：线程不安全</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404111244552.png" alt="image-20230404111244552"></p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404142821835.png" alt="image-20230404142821835"></p>
+<p>静态代码块：随着类的加载而执行，类的加载只会执行一次，进而静态代码块的执行，也只会执行一次；静态代码块的执行会先于非静态代码块的执行。</p>
+<p>非静态代码块：随着对象的创建而执行。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404144837442.png" alt="image-20230404144837442"></p>
+<h2 id="接口与抽象类"><a href="#接口与抽象类" class="headerlink" title="接口与抽象类"></a>接口与抽象类</h2><p>包含抽象方法的类，必须是抽象类。抽象类不能创建对象</p>
+<p>一个类只能继承一个抽象类，而一个类却可以实现多个接口。</p>
+<p>接口的数据成员（public static final,全局常量）都是静态的且必须初始化，数据成员必须是静态常量。</p>
+<p>接口的方法可以是抽象方法、私有方法、静态方法、默认方法。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404150059342.png" alt="image-20230404150059342"></p>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>动态性</p>
+<h2 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h2><p>-&gt; lambda操作符</p>
+<p>-&gt; 左边lambda形参列表，对应着要重写的接口中的抽象方法的形参列表。</p>
+<p>-&gt; 的右边lambda体，对应着接口要实现类要重写方法的方法体。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404163935459.png" alt="image-20230404163935459"></p>
+<p>使用lambda表达式：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="image-20230404163958200.png" alt="image-20230404163958200"></p>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p>1.降低资源消耗:通过池化技术重复利用已创建的线程，降低线程创建和销毁造成的损耗。</p>
+<p>2.提高响应速度:任务到达时，无需等待线程创建即可立即执行（如果有空闲的线程）。<br>3.提高线程的可管理性:线程是稀缺资源，如果无限制创建，个仅会泪R系沉贡源，贮云公为线程的不合理分布导致资源调度失衡，降低系统的稳定性。使用线程池可以进行统一的分配、调优和监控。<br>4.提供更多更强大的功能:线程池具备可拓展性，允许开发人员向其中增加更多的功能。比如延时定时线程池ScheduledThreadPoolExecutor，就允许任务延期执行或定期执行。</p>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/04/25/spring/">spring</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/04/21/hello-world/">hexo常用操作</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
